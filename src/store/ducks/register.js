@@ -1,10 +1,9 @@
 export const Types = {
-    AUTHENTICATED: 'AUTHENTICATED',
-    ASYNC_AUTHENTICATE: 'ASYNC_AUTHENTICATE',
-    LOGOUT: 'LOGOUT',
-    ERROR_FORM_LOGIN: 'ERROR_FORM_LOGIN',
-  
-  };
+    REGISTER: 'REGISTER',
+    ASYNC_REGISTER: 'ASYNC_REGISTER',
+    ERROR_FORM_REGISTER: 'ERROR_FORM_REGISTER',
+
+};
   
   const initialState = {
     data: null,
@@ -13,27 +12,23 @@ export const Types = {
   };
   
   export default (state = initialState, { type, payload }) => {
-    console.log(type, payload)
 
     switch (type) {
-      case Types.ASYNC_AUTHENTICATE:
+      case Types.ASYNC_REGISTER:
         return { ...state, loaded: false, errorsForm: null };
-      case Types.ERROR_FORM_LOGIN:
+      case Types.ERROR_FORM_REGISTER:
         return { ...state, loaded: true, errorsForm: payload };
-      case Types.AUTHENTICATED:
+      case Types.REGISTER:
         return { ...state, data: payload, loaded: true };
       default:
         return state;
     }
   };
   
-  export const handleAuth = (payload) => ({
-    type: Types.ASYNC_AUTHENTICATE,
+  export const handleRegister = (payload) => ({
+    type: Types.ASYNC_REGISTER,
     payload,
   });
-  export const logout = () => ({
-    type: Types.LOGOUT
-  });
-  
+
 
   

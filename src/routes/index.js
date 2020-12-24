@@ -7,16 +7,30 @@ import BeforeLoginScreen from '../pages/BeforeLogin';
 
 import RegisterScreen from '../pages/Register';
 
+import MainScreen from '../pages/Main';
+import { useSelector } from 'react-redux';
+
 
 const Stack = createStackNavigator();
 
 export default () => {
+  
+  const { data, loaded } = useSelector((state) => state.auth);
   return (
     <NavigationContainer>
       <Stack.Navigator headerMode="screen">
-        <Stack.Screen name="BeforeLogin" component={BeforeLoginScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }} />
+        {data && (
+          <>
+            <Stack.Screen name="BeforeLogin" component={BeforeLoginScreen} options={{ headerShown: false }} />
+            <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
+            <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }} />
+          </>
+        )}
+      
+        <Stack.Screen name="Main" component={MainScreen} options={{ headerShown: false }} />
+
+   
+
       </Stack.Navigator>
     </NavigationContainer>
   )

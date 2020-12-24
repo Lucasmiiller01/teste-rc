@@ -5,6 +5,12 @@ export const Container = styled.View`
     flex: 1;
 `;
 
+export const TextError = styled.Text`
+    color: red;
+    font-size: 12px;
+    font-weight: normal;
+    text-align: center;
+`;
 
 export const ContainerBtn = styled.View`
     position: absolute;
@@ -28,7 +34,6 @@ export const TextBtn = styled.Text`
 `;
 
 
-
 export const Title = styled.Text`
     color: black;
     font-size: 20px;
@@ -38,15 +43,6 @@ export const Title = styled.Text`
 
 `;
 
-export const BtnSignIn = styled.TouchableOpacity`
-    background-color: black;
-    margin-top: 10px;
-    width: 260px;
-    height: 60px;
-    border-radius: 30px;
-    justify-content: center;
-    align-items: center;
-`;
 
 export const BtnSignUp = styled.TouchableOpacity`
     background-color: white;
@@ -59,11 +55,3 @@ export const BtnSignUp = styled.TouchableOpacity`
 `;
 
 
-export const TextInput = styled.TextInput`
-   background-color: #EBEBEB;
-   width: 280px;
-   height: 40px;
-   text-align: center;
-   margin-top: 10px;
-
-`;

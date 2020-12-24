@@ -1,8 +1,11 @@
 import React from 'react';
-import { Container, ContainerBtn, BtnSignIn, Title, TextBtn, BtnSignUp, TextInput } from "./styles";
+import { Container, ContainerBtn, Title, TextBtn, BtnSignUp, TextError } from "./styles";
 import Header from "../../components/layout/header";
+import Form from './Form';
+import { useSelector } from 'react-redux';
 
 const LoginScreen = ({ navigation }) => {
+   const { errorsForm } = useSelector((state) => state.auth);
   return (
     <Container>
         <Header title="welcome to the jungle"/>
@@ -10,15 +13,12 @@ const LoginScreen = ({ navigation }) => {
             <Title>
                 Welcome
             </Title>
-            <TextInput placeholder={"User"}>
-            </TextInput>    
-            <TextInput placeholder={"Password"} secureTextEntry={true}>
-            </TextInput>   
-            <BtnSignIn>
-                <TextBtn>
-                    Sign in
-                </TextBtn>    
-            </BtnSignIn>
+            {errorsForm && (
+                <TextError>
+                    {errorsForm}
+                </TextError>   
+            )}
+            <Form/>
             <BtnSignUp>
                 <TextBtn color={'black'} fontWeight="bold" onPress={() => navigation.navigate("Register")}>
                     new user
