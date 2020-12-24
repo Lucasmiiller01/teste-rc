@@ -3,6 +3,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import LoginScreen from '../pages/Login';
+import BeforeLoginScreen from '../pages/BeforeLogin';
+
 import RegisterScreen from '../pages/Register';
 
 
@@ -12,8 +14,9 @@ export default () => {
   return (
     <NavigationContainer>
       <Stack.Navigator headerMode="screen">
-        <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: true }} />
-        <Stack.Screen name="Registrar" component={RegisterScreen} options={{ headerShown: true }} />
+        <Stack.Screen name="BeforeLogin" component={BeforeLoginScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   )
