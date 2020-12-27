@@ -11,7 +11,7 @@ function* handleAuth({ payload }) {
     if(findUserByName && findUserByName.length > 0) {
       return yield all([
         call(service.setAuthStorage, { ...payload }),
-        put({ type: Types.AUTHENTICATED, payload:  {...payload } }),      
+        put({ type: Types.AUTHENTICATED, payload:  {...payload } }),    
       ]);
     }
     yield put({ type: Types.ERROR_FORM_LOGIN, payload:  "User not found !" });   

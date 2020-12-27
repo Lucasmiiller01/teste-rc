@@ -14,7 +14,7 @@ function* handleRegister({ payload }) {
             realm.create('User', { ...payload });
         });      
         return yield all([
-            put({ type: TypesAuth.ASYNC_AUTHENTICATE, payload:  {...payload } }),      
+            put({ type: TypesAuth.ASYNC_AUTHENTICATE, payload:  {...payload } })
         ]);
     }
     yield put({ type: Types.ERROR_FORM_REGISTER, payload:  "User already exists !" });   

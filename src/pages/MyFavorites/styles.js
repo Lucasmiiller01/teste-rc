@@ -11,42 +11,16 @@ export const ContainerContent = styled.View`
 
 `;
 
-export const ContainerSearchInput = styled.View`
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-`;
-
-
-export const TextInput = styled.TextInput`
-   background-color: #EBEBEB;
-   width: 280px;
-   height: 40px;
-   text-align: left;
-   margin-top: 10px;
-`;
-
-export const BtnChangeSchene = styled.TouchableOpacity`
-   background-color: black;
-   width: 40px;
-   height: 40px;
-`;
-
-export const BtnSearch = styled.TouchableOpacity`
-    background-color: black;
-    width: 40px;
-    height: 40px;
-    margin-top: 7px;
-    margin-left: 20px;
-`;
-
-
 export const ContainerItem = styled.View`
    flex-direction: row;
    margin: 20px;
-
 `;
 
+export const Title = styled.Text`
+   margin-left: 20px;
+   font-size: 28px;
+   font-weight: bold;
+`;
 export const DescriptionItem = styled.Text`
   color: #AFAFAF;
   align-self: center;

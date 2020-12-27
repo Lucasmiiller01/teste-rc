@@ -1,7 +1,4 @@
-import {
-    DefaultTheme as NavigationDefaultTheme,
-    DarkTheme as NavigationDarkTheme,
-  } from '@react-navigation/native';
+import { DefaultTheme as NavigationDefaultTheme } from '@react-navigation/native';
 
 
   const CombinedDefaultTheme = {

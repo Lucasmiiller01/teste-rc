@@ -13,7 +13,6 @@ export const Types = {
   };
   
   export default (state = initialState, { type, payload }) => {
-    console.log(type, payload)
 
     switch (type) {
       case Types.ASYNC_AUTHENTICATE:

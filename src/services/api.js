@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const api = () => {
     return axios.create({
-        baseURL: '...',
+        baseURL: 'https://youtube.googleapis.com/youtube/v3/',
     });
 };
 

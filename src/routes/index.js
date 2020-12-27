@@ -8,6 +8,8 @@ import BeforeLoginScreen from '../pages/BeforeLogin';
 import RegisterScreen from '../pages/Register';
 
 import MainScreen from '../pages/Main';
+import MyFavoritesScreen from '../pages/MyFavorites';
+
 import { useSelector } from 'react-redux';
 
 
@@ -19,15 +21,19 @@ export default () => {
   return (
     <NavigationContainer>
       <Stack.Navigator headerMode="screen">
-        {data && (
+        {!data ? (
           <>
             <Stack.Screen name="BeforeLogin" component={BeforeLoginScreen} options={{ headerShown: false }} />
             <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
             <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }} />
           </>
+        ) : (
+          <>
+            <Stack.Screen name="Main" component={MainScreen} options={{ headerShown: false }} />
+            <Stack.Screen name="MyFavorites" component={MyFavoritesScreen} options={{ headerShown: false }} />
+          </>
         )}
       
-        <Stack.Screen name="Main" component={MainScreen} options={{ headerShown: false }} />
 
    
 
