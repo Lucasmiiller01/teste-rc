@@ -15,8 +15,9 @@ const MainScreen = ({ navigation }) => {
   const dispatch = useDispatch();
 
   const handleOnGetChannel = useCallback(
-      () => {
-        dispatch(handleGetChannel(search));
+      (text) => {
+        dispatch(handleGetChannel(text));
+        setSearch("");
       },
       [dispatch]
   );
@@ -29,8 +30,7 @@ const MainScreen = ({ navigation }) => {
   );
 
   const renderItem = ({ item }) => {
-    const checkInArrayFavorite = dataChannels.channelsFavorite.find(i => i === item.etag);
-    console.log(dataChannels.channelsFavorite)
+    const checkInArrayFavorite = dataChannels.channelsFavorite.find(i => i.id === item.etag);
     return <Item title={item.snippet.channelTitle} uri={item.snippet.thumbnails.default.url}  id={item.etag} isFavorite={checkInArrayFavorite}/>
 
   }
@@ -51,8 +51,11 @@ const MainScreen = ({ navigation }) => {
         <Header title={data?.name} scene="MyFavorites" navigation={navigation}/>
         <ContainerContent>
           <ContainerSearchInput>
-              <TextInput placeholder="Channels"/>
-              <BtnSearch  onPress={handleOnGetChannel} value={search} onChange={(e) => setSearch(e)}/>
+              <TextInput placeholder="Channels" onChangeText={(e) => {
+                console.log(e)
+                setSearch(e)
+              }} value={search}/>
+              <BtnSearch  onPress={() => handleOnGetChannel(search)}  />
           </ContainerSearchInput>
           <FlatList
             data={dataChannels.data}

@@ -60,5 +60,5 @@ export const BtnFavor = styled.TouchableOpacity`
    border-radius: 5px;
    align-self: center;
    position: absolute;
-   right: 10; 
+   right: 10px; 
 `;
